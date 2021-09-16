@@ -70,3 +70,8 @@ For one it saves a lot of lines and boilerplate on more complex structures. Also
 ```
 
 Don't get me wrong, `nameof` is great but just look at all this visual noise! We don't need that with the source generator beucase the name is generated from the same text as the value.
+
+
+# Future Plans & Contributing
+
+This project is my attempt to learn .Net source generators while making something I can actually see myself using. I plan to get out a NuGet release after the code is cleaned up, but outside of that I don't see much in way of future improvement. Of course if you have any suggestions, pull requests are welcome.
