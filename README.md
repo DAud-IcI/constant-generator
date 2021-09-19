@@ -21,6 +21,7 @@ Include this project using ProjectReference with the attributes you see below. A
 
 Say you want custom routes for your ASP.Net application, but also put it in a constants file so you can refer to them in your logic.
 
+_sample.routes.constants.xml_
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <Management xmlns:g="https://github.com/DAud-IcI/constant-generator/">
@@ -47,6 +48,8 @@ The elements with the `g` namespace are optional configuration items, they are o
 - Separator: The values in the constants are the full path from the root, with this string used as the separator. The default value is `/`.
 
 It generates this class:
+
+_SampleRoutes.GeneratedConstant.cs_
 ```c-sharp
 namespace ConstantGenerator.Sample.Constants.Routes
 {

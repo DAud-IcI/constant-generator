@@ -22,7 +22,7 @@ namespace NotifyPropertyChangedGenerator
             foreach (var constantFile in context.AdditionalFiles.Where(x => x.Path.EndsWith(ConstantXmlExtension)))
             {
                 var fileName = Path.GetFileName(constantFile.Path);
-                var name = fileName[..ConstantXmlExtension.Length];
+                var name = fileName[..^ConstantXmlExtension.Length];
 
                 var xml = XDocument.Parse(File.ReadAllText(constantFile.Path));
                 var root = xml.Root ?? throw new InvalidOperationException("Root can't be null.");
@@ -36,7 +36,7 @@ namespace NotifyPropertyChangedGenerator
                 Generate(sb, root, xmlContext);
                 sb.AppendLine("}");
 
-                context.AddSource(name + ".cs", sb.ToString());
+                context.AddSource(name.ToPascalCase() + ".GeneratedConstant.cs", sb.ToString());
             }
         }
 
