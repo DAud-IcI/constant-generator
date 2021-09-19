@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Management xmlns:g="https://github.com/DAud-IcI/constant-generator/">
+    <!-- Without this, your class will be in the Constants namespace. That can work if the file names are unique. -->
+    <g:Namespace Value="ConstantGenerator.Sample.Constants.Routes" />
+    
+    <!-- This is the default already so you can safely omit it. -->
+    <g:Separator Value="/" />
+
+    <Users />
+    <Companies />
+    <New>
+        <User />
+        <Company />
+    </New>
+    <Unassign>
+        <User />
+    </Unassign>
+</Management>

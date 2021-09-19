@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConstantGenerator.Sample", "src\ConstantGenerator.Sample\ConstantGenerator.Sample.csproj", "{77CCF3FA-A3CB-4BAC-89E8-BA92D50C4049}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConstantGenerator", "src\ConstantGenerator\ConstantGenerator.csproj", "{B1BAAF8B-215E-461B-9F17-05AFD6CA42EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{77CCF3FA-A3CB-4BAC-89E8-BA92D50C4049}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77CCF3FA-A3CB-4BAC-89E8-BA92D50C4049}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77CCF3FA-A3CB-4BAC-89E8-BA92D50C4049}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77CCF3FA-A3CB-4BAC-89E8-BA92D50C4049}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1BAAF8B-215E-461B-9F17-05AFD6CA42EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1BAAF8B-215E-461B-9F17-05AFD6CA42EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1BAAF8B-215E-461B-9F17-05AFD6CA42EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1BAAF8B-215E-461B-9F17-05AFD6CA42EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
