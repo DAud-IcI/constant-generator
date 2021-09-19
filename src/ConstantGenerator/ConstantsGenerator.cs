@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
-using Generator;
 using Microsoft.CodeAnalysis;
 
-namespace NotifyPropertyChangedGenerator
+namespace ConstantGenerator
 {
     [Generator]
     public class ConstantsGenerator : ISourceGenerator

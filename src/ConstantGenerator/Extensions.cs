@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace System.Collections.Generic
+namespace System
 {
     public static class Extensions
     {
