@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Xml.Linq;
 using Generator;
 using Microsoft.CodeAnalysis;
@@ -32,15 +31,21 @@ namespace NotifyPropertyChangedGenerator
                         .Elements()
                         .Where(element => element.Name.Namespace == MetaDataXmlNamespace));
 
-                var sb = new StringBuilder($"namespace {xmlContext.Namespace}\n{{\n");
-                Generate(sb, root, xmlContext);
-                sb.AppendLine("}");
+                var lines = new List<string>
+                {
+                    $"namespace {xmlContext.Namespace}",
+                    "{",
+                };
+                Generate(lines, root, xmlContext);
+                lines.Add("}");
 
-                context.AddSource(name.ToPascalCase() + ".GeneratedConstant.cs", sb.ToString());
+                context.AddSource(
+                    name.ToPascalCase() + ".GeneratedConstant.cs", 
+                    string.Join("\n", lines));
             }
         }
 
-        private void Generate(StringBuilder sb, XElement element, XmlContext context)
+        private void Generate(List<string> lines, XElement element, XmlContext context)
         {
             if (element.Name.Namespace == MetaDataXmlNamespace) return; // Skip meta elements.
 
@@ -50,16 +55,21 @@ namespace NotifyPropertyChangedGenerator
             
             if (!element.HasElements)
             {
-                sb.AppendLine($"{indentation}public const string {name} = \"{context.Path}\";");
+                lines.Add($"{indentation}public const string {name} = \"{context.Path}\";");
                 return;
             }
 
-            sb.AppendLine($"\n{indentation}public static class {name}\n{indentation}{{");
+            var lastLine = lines[^1].Trim();
+            if (!string.IsNullOrEmpty(lastLine) && !lastLine.EndsWith("{")) lines.Add(string.Empty);
+                
+            lines.Add($"{indentation}public static class {name}");
+            lines.Add($"{indentation}{{");
+            lines.Add($"{indentation}    public const string ThisRoute = \"{context.Path}\";\n");
             foreach (var child in element.Elements())
             {
-                Generate(sb, child, context);
+                Generate(lines, child, context);
             }
-            sb.AppendLine($"{indentation}}}");
+            lines.Add($"{indentation}}}");
         }
     }
 }

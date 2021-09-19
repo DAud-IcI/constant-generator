@@ -53,20 +53,25 @@ _SampleRoutes.GeneratedConstant.cs_
 ```c-sharp
 namespace ConstantGenerator.Sample.Constants.Routes
 {
-
     public static class Management
     {
+        public const string ThisRoute = "Management";
+
         public const string Users = "Management/Users";
         public const string Companies = "Management/Companies";
 
         public static class New
         {
+            public const string ThisRoute = "Management/New";
+
             public const string User = "Management/New/User";
             public const string Company = "Management/New/Company";
         }
 
         public static class Unassign
         {
+            public const string ThisRoute = "Management/Unassign";
+
             public const string User = "Management/Unassign/User";
         }
     }
